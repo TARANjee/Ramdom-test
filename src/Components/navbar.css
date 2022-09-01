@@ -1,0 +1,29 @@
+.customBtn {
+    text-decoration: none;
+    color: white;
+}
+
+/* .customBtn:hover{
+    color: rgb(226, 226, 226);   
+} */
+.mr {
+    padding: 10px;
+}
+
+.row {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.space {
+
+    margin-right: 20px;
+}
+
+.btw {
+    display: flex;
+    justify-content: space-between;
+}

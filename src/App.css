@@ -1,3 +1,13 @@
-*{
+* {
   margin: 0;
+  font-family: sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  height: 90vh;
 }
