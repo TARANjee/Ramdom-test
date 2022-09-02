@@ -40,6 +40,10 @@ const Navbar = () => {
                             </Typography>
                         </div>
                         <div className='row '>
+                        <Typography variant="h6" component="div">
+                        <Link to='/test' className='customBtn space'>Test </Link>
+                            
+                            </Typography>
                             <Typography variant="h6" component="div">
                                 <Fab variant="extended" className=' space'>
                                     <Upload onClick={handleOpen} />

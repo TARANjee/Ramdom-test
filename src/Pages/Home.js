@@ -8,7 +8,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import TaskIcon from '@mui/icons-material/Task';
+import { Link } from 'react-router-dom';
+import '../App.css';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.common.black,
@@ -52,43 +54,40 @@ const questions = [
         question: 'Find First and Last Position of Element in Sorted Array',
     }
 ]
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(id,title, solution, difficulty) {
+    return { id,title, solution, difficulty};
   }
   
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData(1,'Find the Duplicate Number', <TaskIcon color="primary" />,'Easy'),
+    createData(2,'Find All Duplicate in an Array', <TaskIcon color="primary" />,'Easy'),
+    createData(3,'Intersection of Two Array', <TaskIcon color="primary" />,'Medium'),
+    createData(4,'Two Sum', <TaskIcon color="primary" />,'Easy'),
+    createData(5,'Peak Index in a Mountain Array', <TaskIcon color="primary" />,'Medium'),
+    
 ];
 const Home = () => {
     const [open, setOpen] = useState(false);
 
     return (
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <Table sx={{ minWidth: 500 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                        <StyledTableCell align="right">Calories</StyledTableCell>
-                        <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                        <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                        <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-                    </TableRow>
+                        <StyledTableCell>ID</StyledTableCell>
+                        <StyledTableCell>Title(Questions)</StyledTableCell>
+                        <StyledTableCell >Solution</StyledTableCell>
+                        <StyledTableCell >Difficulty</StyledTableCell>
+                        </TableRow>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
                         <StyledTableRow key={row.name}>
-                            <StyledTableCell component="th" scope="row">
-                                {row.name}
-                            </StyledTableCell>
-                            <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                            <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                            <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                            <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                        </StyledTableRow>
+                            <StyledTableCell >{row.id}</StyledTableCell>
+                            <StyledTableCell component="th" >{row.title}</StyledTableCell>
+                            <StyledTableCell ><Link to={`${row.title}/solution`}>{row.solution}</Link> </StyledTableCell>
+                            <StyledTableCell style={row.difficulty==='Easy'?{color:'green'}:{color:'#FEBF1D'} } >{row.difficulty}</StyledTableCell>
+                           </StyledTableRow>
                     ))}
                 </TableBody>
             </Table>
