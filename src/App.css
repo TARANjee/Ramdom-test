@@ -12,8 +12,42 @@
   height: 90vh;
 }
 .green{
-color: red;
+color: green;
 }
 .yellow{
-color: yellow;
+color: #FEBF1D;
+}
+.red{
+  color: red;
+}
+/* Question */
+.margin{
+  margin:10px;
+}
+.marginTop{
+  margin-top: 10px;
+}
+.marginTB{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.diff{
+color: green;
+}
+.marginL{
+  margin-left: 15px;
+  
+}
+.marginT{
+  margin-top: 5px;
+  
+}
+.example{
+  background-color: #F7F9FA;
+  padding: 10px;
+  margin-top: 10px;
+}
+.exp{
+  display: flex;
+  margin-top: 5px;
 }

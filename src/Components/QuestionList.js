@@ -8,14 +8,14 @@ import ListItemText from '@mui/material/ListItemText';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Divider } from '@mui/material';
 
-const QuestionList = ({ question }) => {
+const QuestionList = ({ question,callbackTitle }) => {
     return (
         <Box >
             <List>
                 {question.map((text, index) => (
-                    <div>
-                        <ListItem key={index} disablePadding>
-                            <ListItemButton>
+                    <div key={index}>
+                        <ListItem  disablePadding>
+                            <ListItemButton onClick={()=>callbackTitle(text)}>
                                 <ListItemIcon>
                                     <AssignmentIcon />
                                 </ListItemIcon>
